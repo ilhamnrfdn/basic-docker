@@ -107,4 +107,15 @@ contoh command:
                     docker container run --rf --name backup-lagi --mount "type=bind,source=/home/fdn-tech/Documents/belajar/doker belajar/basic docker/backup,destination=/backup" --mount "type=volume,source=volumemongo,destination=/data/db" ubuntu:latest tar cvf /backup/backup-lagi/tar.gz /data
                     - yg di tambahkan dalam command di atas adalah (run --rf serta command tambahan di belakang image:tag)
 
+
++ DOCKER NETWORK: 
+1. Berguna untuk container saling berkomunikasi, macam2 network yg sering dipakai yaitu: bridge, host, none 
+    - network bridge dimana ketika kita sudah membuat kategori a dan dipakai 2 container maka container tersebut bisa saling berkomunikasi
+contoh membuat docker network: 
+! docker networkd create --drive bridge namadriver (apabila tanpa memakai --drive maka otomatis bakal default menjadi bridge)
+- network tidak bisa dihapus apabila ada container yg masih menggunakannya
+container yg terdapat dalam 1 network yg sama bisa salig berkomunikasi, container bisa akses another container dnegan menyebutkan hostname atau nama containernya
+! cara menambahkan network pada container : docker container create --name blabla --network namanetwork image:tag
+
 ```
+
